@@ -1,0 +1,17 @@
+<div id="bg">
+    <div class="container">
+        <div id="formheader">
+            <span id="login">Login</span>
+        </div>
+        <div id="formfooter">
+
+            <label class="text-danger">{{message}}</label>
+            <label id="username">Username</label>
+            <input type="text" [(ngModel)]="user.Username" placeholder="Login"><br>
+            <label id="password">Password</label>
+            <input type="password" [(ngModel)]="user.Password" placeholder="Password"><br>
+            <a routerLink='../home'>&#8592; Go back to home</a><br>
+            <button class="btn btn-primary" (click)="login()">LOGIN</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,219 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-success" id="grad">
+  <div class="container-fluid">
+    <a style="margin-left: 10px;" class="navbar-brand">
+      <img src="../assets/Images/logo.png" width="50" height="50" alt="">
+      <span style="margin-left: 12px; color: rgb(44, 153, 255);"><strong>ABC Hospitals</strong></span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li style="margin-left: 25px;" class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="../home">Home</a>
+        </li>
+        <li style="margin-left: 8px;" class="nav-item">
+          <a class="nav-link" routerLink='../status'>Check Status</a>
+        </li>
+        <li [hidden]="!logout" style="margin-left: 8px;" class="nav-item">
+          <a class="nav-link" routerLink='../claim'>Initiate Claims</a>
+        </li>
+      </ul>
+      <ul [hidden]="!logout" id="move-right" class="navbar-nav">
+        <li class="nav-item">
+          <strong><a class="nav-link" [routerLink]="['../home',1]">Logout</a></strong>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="col-12">
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active image-slide">
+        <img src="../assets/Images/pic1.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item image-slide">
+        <img src="../assets/Images/pic8.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Some representative placeholder content for the second slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item image-slide">
+        <img src="../assets/Images/pic3.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+ </div>
+<div class="container heading">
+  <p id="head1"><span>Welcome to ABC Hospitals</span></p>
+</div>
+ <div class="container-fluid content justify-content-center">
+  <div class="row">
+    <div class="col-lg-6 col-md-7">
+      <div class="card">
+        <div class="card-body">
+          <p style="margin-left: 12%;" class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+    </div>
+    <div [hidden]="logout" class="col-lg-4 col-md-5 col-sm-10">
+      <div style="align-content: center;align-items: center;" id="admin-box" class="card">
+        <img style="width: 30%;" src="../assets/Images/user.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><strong>Are you an ADMIN?</strong></h5>
+          <p class="card-text">Login here to initiate claims.</p>
+          <a routerLink='../login' class="btn btn-primary"><strong>LOGIN</strong></a>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+ <div class="container heading">
+  <p id="head1"><span>Services Provided</span></p>
+</div>
+<h2 class="text-danger">{{servicesError}}</h2>
+<table id="treatment">
+  
+  <thead>
+      <tr>
+          <th>Category</th>
+          <th>Package</th>
+          <th>Test Details</th>
+          <th>Cost</th>
+          <th>Duration</th>
+      </tr>
+  </thead>
+  <tbody>
+    
+      <tr *ngFor="let i of list">
+          <td>{{i.ailment}}</td>
+          <td>{{i.treatmentPackageName}}</td>
+          <td>{{i.testDetails}}</td>
+          <td>{{i.cost}}</td>
+          <td>{{i.treatmentDuration}} weeks</td>
+      </tr>
+  </tbody>
+</table>
+<div class="container heading">
+  <p id="head1"><span>Register Now</span></p>
+</div>
+<div>
+  <div class="row">
+    <div id="form" class="col-lg-4">
+      <div class="container-text">
+        <h2>Get your Treatment Plan in a minute</h2>
+        <p>and it's totally free !</p>
+      </div>
+      <h3 class="text-danger">{{mainMessage}}</h3>
+      <table>
+          <tr>
+              <td>Name</td>
+          </tr>
+          <tr><td><input type="text" [(ngModel)]="pat.Name" placeholder="Enter Name"></td></tr>
+          <tr><td><p class="text-danger" style="font-size: small;"><strong>{{nameError}}</strong></p></td></tr>
+          <tr>
+              <td><label class="table-text">Age</label></td>
+          </tr>
+          <tr>
+              <td><input type="number" max=150 min=1 [(ngModel)]="pat.age" ></td>
+          </tr>
+          <tr><td><p class="text-danger" style="font-size: small;"><strong>{{ageError}}</strong></p></td></tr>
+          <tr>
+            <td><label class="table-text">Ailment</label></td>
+        </tr>
+          <tr>
+            <td>
+              <select [(ngModel)]="pat.Ailment">
+                <option *ngFor="let i of ailments" [value]="i.name" [selected]="i.name==pat.Ailment">{{i.name}}</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+              <td><label class="table-text">Package</label></td>
+          </tr>
+          <tr>
+          <td><input type="radio" id="package1" [(ngModel)]="pat.PackageName" value="Package 1" name="package"><label style="margin-left: 5px;" for="package1"><strong>Package 1</strong></label>
+          <input style="margin-left: 11%;" type="radio" id="package2" [(ngModel)]="pat.PackageName" value="Package 2" name="package"><label style="margin-left: 5px;" for="package2"><strong>Package 2</strong></label></td>
+          </tr>
+          <tr><td><label class="table-text">Commencement Date</label></td></tr>
+          <tr>
+              <td><input placeholder="Choose Date" [(ngModel)]="pat.CommencementDate" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" /></td>
+          </tr>
+          <tr><td><p class="text-danger" style="font-size: small;"><strong>{{dateError}}</strong></p></td></tr>
+          <tr>
+              <td><button style="margin-top: 10%;" class="btn btn-primary" (click)="submit()">Submit</button></td>
+          </tr>
+      </table>
+    </div>
+    <div id="treatmenttable" class="col-lg-4">
+      <h2 class="text-danger">{{planError}}</h2>
+      <div  [hidden]="display">
+        <h2 id="head">Your Treatment Plan</h2>
+      <hr>
+      <table id="treatment">
+        <tr>
+          <td>Identification Number</td>
+          <td>{{plan.patientId}}</td>
+        </tr>
+        <tr>
+          <td>Package Name</td>
+          <td>{{plan.packageName}}</td>
+        </tr>
+        <tr>
+          <td>Test Details</td>
+          <td>{{plan.testDetails}}</td>
+        </tr>
+        <tr>
+          <td>Cost</td>
+          <td>{{plan.cost}}</td>
+        </tr>
+        <tr>
+          <td>Specialist Name</td>
+          <td>{{plan.specialistName}}</td>
+        </tr>
+        <tr>
+          <td>Commence</td>
+          <td>{{commence}}</td>
+        </tr>
+        <tr>
+          <td>Conclude</td>
+          <td>{{end}}</td>
+        </tr>
+      </table>
+      <hr>
+      <tr><strong>Your treatment plan has been successfully entered into the system.</strong><br></tr>
+      <hr>
+      <strong>Please note down your ID Number to check your status.</strong>
+      <button style="margin-top: 5%;margin-left: 10%;" routerLink='../status' class="btn btn-success">Check Status</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ <div class="footer">
+  <h6><strong>&#169; 2021 All rights reserved by POD1</strong></h6>
+ </div>

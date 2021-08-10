@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-success" id="grad">
+  <div class="container-fluid">
+    <a style="margin-left: 10px;" class="navbar-brand">
+      <img src="../assets/Images/logo.png" width="50" height="50" alt="">
+      <span style="margin-left: 12px; color: rgb(44, 153, 255);"><strong>ABC Hospitals</strong></span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li style="margin-left: 25px;" class="nav-item">
+          <a class="nav-link" routerLink="../home">Home</a>
+        </li>
+        <li style="margin-left: 8px;" class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink='../status'>Check Status</a>
+        </li>
+        <li [hidden]="!logout" style="margin-left: 8px;" class="nav-item">
+          <a class="nav-link" routerLink='../claim'>Initiate Claims</a>
+        </li>
+      </ul>
+      <ul [hidden]="!logout" id="move-right" class="navbar-nav">
+        <li class="nav-item">
+          <strong><a class="nav-link" [routerLink]="['../home',1]">Logout</a></strong>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<h3>Check the Status of your Treatment Plan</h3>
+<h6>Make sure you have your Identification Number with you. 
+  <br>It's possible that you're not the only one with your name.</h6>
+<div>
+  <h2 style="margin-left: 3%;margin-top: 2%;" class="text-danger">{{errorMessage}}</h2>
+  <table id="members">
+    
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Specialist Name</th>
+            <th>Insurer</th>
+            <th>Status</th>
+            <th>Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of list">
+            <td>{{i.patientId}}</td>
+            <td>{{i.patientName}}</td>
+            <td>{{i.specialistName}}</td>
+            <td>{{i.insurer}}</td>
+            <td>{{i.status}}</td>
+            <td>{{i.cost}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>

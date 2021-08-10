@@ -1,0 +1,90 @@
+#form{
+    background-color: rgb(126, 126, 192);
+    margin-left: 5%;
+    width: 40%;
+    padding-top: 4%;
+    padding-left: 3%;
+    padding-bottom: 5%;
+    margin-top: 3%;
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#head{
+    color: blueviolet;
+}
+
+select{
+    border-radius: 5px;
+    padding: 3%;
+    padding-left: 10%;
+    color: black;
+    font-family:sans-serif;
+    font-weight: 300;
+}
+
+input {
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 2%;
+    padding-left: 5%;
+  }
+
+.table-text{
+    font-size: 15px;
+    margin-top: 5%;
+}
+
+
+#treatmenttable{
+    margin: 5%;
+}
+
+.container-text{
+    color: white;
+}
+
+#treatment {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 140%;
+  }
+  
+label{
+  font-size: 13px;
+
+}
+
+  #treatment td, #treatment th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  #treatment tr:nth-child(odd){background-color: #f2f2f2;}
+  
+  #treatment tr:hover {background-color: #ddd;}
+  
+  #treatment th:nth-child(1){
+    border: none;
+  }
+
+
+  @media(max-width:995px){
+    #form{
+        margin-left: 12%;
+        width: 80%;
+        padding-left: 7%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+    #treatment{
+        width: 90%;
+        margin-left: 2%;
+
+    }
+    a{
+        margin-left: 2%;
+    }
+}

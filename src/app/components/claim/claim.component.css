@@ -1,0 +1,40 @@
+.card{
+  box-shadow: 5px 10px 10px 5px rgba(30, 30, 31, 0.4);
+}
+
+h3{
+    color:#255f69;
+    margin: 2%;
+  }
+  
+  #insurers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      margin: auto;
+      margin-top: 0%;
+      width: 90%;
+      box-shadow: 5px 10px 10px 5px rgba(30, 30, 31, 0.4);
+    }
+    
+  label{
+    font-size: 13px;
+  
+  }
+  
+    #insurers td, #insurers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    
+    #insurers tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #insurers tr:hover {background-color: #ddd;}
+    
+    #insurers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      
+      background-color: #317581;
+      color: white;
+    }
